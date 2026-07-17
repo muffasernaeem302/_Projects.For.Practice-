@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 2: DOM Manipulation To-Do</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; background: #fafafa; }
+        .todo-container { max-width: 400px; margin: auto; background: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        ul { list-style: none; padding: 0; }
+        li { display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd; }
+        .delete-btn { color: red; cursor: pointer; border: none; background: none; }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h2>To-Do List</h2>
+        <input type="text" id="todo-input" placeholder="Add a new task...">
+        <button id="add-btn">Add Task</button>
+        <ul id="todo-list"></ul>
+    </div>
+    <script src="todo.js"></script>
+</body>
+</html>
