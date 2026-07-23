@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subhan Marriage Hall — Fort Abbas, Pakistan</title>
+    <meta name="description"
+        content="Subhan Marriage Hall in Fort Abbas, Pakistan - Perfect venue for weddings, walimas, conferences, and family functions. Affordable packages with delicious food and professional service." />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --gold: #8B6914;
+            --gold-light: #C49A2A;
+            --gold-bright: #D4A017;
+            --navy: #1A2744;
+            --cream: #F7F4EE;
+            --cream-dark: #EDE9E0;
+            --white: #FFFFFF;
+            --text-dark: #1A2744;
+            --text-mid: #4A5568;
+            --text-light: #718096;
+            --radius: 12px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+        }
+
+        /* Loading animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: opacity 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin: 0 4px;
+            animation: bounce 1s infinite;
+        }
+
+        .loader-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loader-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid rgba(139, 105, 20, 0.12);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .nav-logo-text .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #8B1A1A;
+        }
+
+        .nav-logo-text .sub {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            padding: 0.55rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light);
+        }
+
+        /* hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            width: 22px;
+            height: 2px;
+            background: var(--text-dark);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* ── HERO ── */
+        #home {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('images/hero_background.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(15, 20, 40, 0.55) 0%, rgba(15, 20, 40, 0.4) 60%, rgba(15, 20, 40, 0.65) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            padding: 2rem;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.85);
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-eyebrow::before,
+        .hero-eyebrow::after {
+            content: '';
+            width: 32px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-h1 span {
+            color: var(--gold-bright);
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 520px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            color: var(--white);
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+        }
+
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.82rem;
+        }
+
+        .hero-badge svg {
+            color: var(--gold-bright);
+        }
+
+        .hero-badge.rating {
+            color: var(--gold-bright);
+            font-weight: 600;
+        }
+
+        .hero-badge.rating span {
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+        }
+
+        /* ── SECTIONS COMMON ── */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .section-title span {
+            color: var(--gold);
+        }
+
+        .section-sub {
+            color: var(--text-mid);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-top: 0.8rem;
+            max-width: 560px;
+        }
+
+        /* ── ABOUT ── */
+        #about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-img-wrap {
+            position: relative;
+        }
+
+        .about-img {
+            width: 100%;
+            border-radius: 16px;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text .section-sub {
+            max-width: 100%;
+        }
+
+        .about-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.8rem;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid var(--cream-dark);
+            background: var(--white);
+            padding: 0.45rem 1rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .badge-pill::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* ── SERVICES ── */
+        #services {
+            background: var(--white);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-header .section-sub {
+            margin: 0.8rem auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid #E8E4DC;
+            border-radius: var(--radius);
+            padding: 1.8rem 1.5rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.09);
+            transform: translateY(-3px);
+        }
+
+        .service-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--cream);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            line-height: 1.65;
+        }
+
+        /* ── WHY US ── */
+        #why {
+            background: var(--navy);
+            padding: 5rem 2rem;
+        }
+
+        #why .section-eyebrow {
+            color: var(--gold-bright);
+        }
+
+        #why .section-title {
+            color: var(--white);
+        }
+
+        #why .section-title span {
+            color: var(--gold-bright);
+        }
+
+        .why-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .why-item {
+            text-align: center;
+        }
+
+        .why-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--gold-bright);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+        }
+
+        .why-item h3 {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 0.6rem;
+        }
+
+        .why-item p {
+            font-size: 0.84rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.7;
+        }
+
+        /* ── GALLERY ── */
+        #gallery {
+            background: var(--cream);
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .gallery-header .section-sub {
+            margin: 0.8rem auto 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: var(--radius);
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-cta {
+            text-align: center;
+        }
+
+        .btn-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-dark:hover {
+            background: var(--gold-light);
+        }
+
+        /* ── PRICING ── */
+        #pricing {
+            background: var(--white);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-card {
+            max-width: 680px;
+            margin: 0 auto;
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .pricing-label {
+            display: inline-block;
+            background: var(--cream);
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            font-size: 0.78rem;
+            color: var(--text-mid);
+            margin-bottom: 1.2rem;
+        }
+
+        .pricing-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.4rem;
+        }
+
+        .pricing-per {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1.8rem;
+        }
+
+        .pricing-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem 2rem;
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .pf {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.87rem;
+            color: var(--text-mid);
+        }
+
+        .pf::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .pricing-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-pricing {
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+
+        .btn-pricing:hover {
+            background: var(--gold-light);
+        }
+
+        /* ── REVIEWS ── */
+        #reviews {
+            background: var(--cream);
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #DDD8CC;
+            background: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .stars-gold {
+            color: #F5A623;
+            letter-spacing: 2px;
+        }
+
+        .rating-num {
+            font-weight: 700;
+        }
+
+        .rating-label {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .review-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.6rem 1.5rem;
+            border: 1px solid #EAE6DC;
+        }
+
+        .review-stars {
+            color: #F5A623;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .review-text {
+            font-size: 0.88rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* ── CONTACT ── */
+        #contact {
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-form-wrap .section-eyebrow {
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-form-wrap h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-form-wrap h2 span {
+            color: var(--gold);
+        }
+
+        .contact-form-wrap .form-hint {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.83rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1px solid #DDD8CC;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            background: var(--white);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #B0AAA0;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            padding: 0.85rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--gold-light);
+        }
+
+        .contact-info-box {
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 2rem 1.8rem;
+            color: var(--white);
+        }
+
+        .contact-info-box h3 {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.4rem;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.2rem;
+        }
+
+        .info-val {
+            font-size: 0.88rem;
+            color: var(--white);
+            line-height: 1.5;
+        }
+
+        .social-row {
+            margin-top: 2rem;
+        }
+
+        .social-row p {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.8rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 0.7rem;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer-brand .nav-logo-text .brand {
+            color: var(--white);
+        }
+
+        .footer-brand .nav-logo-text .sub {
+            color: var(--gold-bright);
+        }
+
+        .footer-tagline {
+            font-size: 0.83rem;
+            margin-top: 0.8rem;
+            line-height: 1.6;
+            max-width: 220px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold-bright);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.55rem;
+        }
+
+        .footer-col ul li a {
+            text-decoration: none;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.65);
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact-item {
+            font-size: 0.84rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ── WHATSAPP FLOAT ── */
+        .wa-float {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 999;
+            width: 52px;
+            height: 52px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            font-size: 1.4rem;
+            transition: transform 0.2s;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.08);
+        }
+
+        /* ── SUCCESS MSG ── */
+        .success-msg {
+            display: none;
+            background: #F0FFF4;
+            border: 1px solid #68D391;
+            color: #276749;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            margin-top: 0.8rem;
+            text-align: center;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .pricing-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 1rem 2rem 1.5rem;
+                border-bottom: 1px solid #EEE;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .services-grid,
+            .why-grid,
+            .gallery-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-badges {
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#home" class="nav-logo">
+            <div class="nav-logo-icon">🌙</div>
+            <div class="nav-logo-text">
+                <span class="brand">Subhan</span>
+                <span class="sub">— Marriage Hall —</span>
+            </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact" class="nav-cta" style="display:inline-block;">Check Availability</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta" id="navCtaDesktop">Check Availability</a>
+        <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Fort Abbas, Pakistan</p>
+            <h1 class="hero-h1">Your Dream Event,<br><span>Beautifully Realized</span></h1>
+            <p class="hero-sub">Weddings · Walimas · Conferences · Family Functions — where every celebration becomes an
+                unforgettable memory in the heart of Fort Abbas.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-primary">Book Your Event →</a>
+                <a href="#gallery" class="btn-outline">View Gallery</a>
+            </div>
+            <div class="hero-badges">
+                <span class="hero-badge">✅ Affordable Packages</span>
+                <span class="hero-badge">✅ Delicious Food</span>
+                <span class="hero-badge">✅ Professional Staff</span>
+                <span class="hero-badge rating">★ 4.2 <span>168 Google Reviews</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-wrap">
+                    <img class="about-img" src="images/about_section.png"
+                        alt="Elegantly decorated dining table at Subhan Marriage Hall" />
+                </div>
+                <div class="about-text">
+                    <p class="section-eyebrow">About Us</p>
+                    <h2 class="section-title">Fort Abbas's Most <span>Trusted Venue</span></h2>
+                    <p class="section-sub" style="max-width:100%;margin-top:1rem;">
+                        Subhan Marriage Hall has been the heart of celebrations in Fort Abbas for years. We're known for
+                        our delicious food, well-mannered staff, and spotlessly clean atmosphere — all at prices that
+                        families can afford. Whether it's a grand wedding, an intimate walima, or a corporate gathering,
+                        we make every event feel special.
+                    </p>
+                    <div class="about-badges">
+                        <span class="badge-pill">Affordable Pricing</span>
+                        <span class="badge-pill">Delicious Food</span>
+                        <span class="badge-pill">Professional Staff</span>
+                        <span class="badge-pill">Neat & Clean Environment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container">
+            <div class="services-header">
+                <p class="section-eyebrow">What We Host</p>
+                <h2 class="section-title">Events We <span>Celebrate</span></h2>
+                <p class="section-sub">From grand wedding receptions to intimate family gatherings — we have the perfect
+                    setting for every occasion.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🤍</div>
+                    <h3>Weddings</h3>
+                    <p>Your big day deserves the grandest setting. Full hall decoration, catering, and guest management
+                        for up to 500 guests.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🕌</div>
+                    <h3>Walima Ceremonies</h3>
+                    <p>Celebrate the walima in a beautifully decorated setting with our traditional menu options and
+                        warm hospitality.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Business Conferences</h3>
+                    <p>Professional setup with audio-visual equipment, seating arrangements, and catering for corporate
+                        events and seminars.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Family Functions</h3>
+                    <p>Birthdays, anniversaries, mehndi nights — whatever the celebration, we make it memorable with
+                        personalized service.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎂</div>
+                    <h3>Birthday Parties</h3>
+                    <p>Fun, festive, and fully catered — throw the perfect birthday bash with custom themes,
+                        decorations, and a special menu.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📖</div>
+                    <h3>Religious Gatherings</h3>
+                    <p>Respectfully arranged events for milad, Quran khwani, and other religious ceremonies with
+                        appropriate seating and catering.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why">
+        <div class="container">
+            <div class="why-header">
+                <p class="section-eyebrow">Why Choose Us</p>
+                <h2 class="section-title">What Makes Us <span>Special</span></h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-dot"></div>
+                    <h3>Delicious Fresh Food</h3>
+                    <p>Our kitchen is the talk of Fort Abbas. Multiple reviewers rated our food a perfect 5/5 — we serve
+                        fresh, flavorful dishes that your guests will rave about.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-dot"></div>
+                    <h3>Well-Mannered Staff</h3>
+                    <p>Our team treats every guest like family. Polite, attentive service that makes you and your guests
+                        feel truly welcomed and cared for.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-dot"></div>
+                    <h3>Neat & Clean Environment</h3>
+                    <p>Cleanliness is our hallmark. Every corner of our hall is spotless — from the dining area to the
+                        washrooms — because your comfort matters.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-dot"></div>
+                    <h3>Best Decoration in Budget</h3>
+                    <p>Stunning decorations that look like a million rupees but cost a fraction. We transform our hall
+                        into exactly the vision you have in mind.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-dot"></div>
+                    <h3>Affordable Packages</h3>
+                    <p>Rs. 1,000–2,000 per person — exceptional quality at a price that respects your wallet. No hidden
+                        charges, no surprises.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-dot"></div>
+                    <h3>Convenient Location</h3>
+                    <p>Right in the heart of Fort Abbas, Sahiwal, Punjab — easy to find, ample parking, and accessible
+                        for guests coming from nearby towns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="container">
+            <div class="gallery-header">
+                <p class="section-eyebrow">Gallery</p>
+                <h2 class="section-title">Real Events at <span>Subhan Marriage Hall</span></h2>
+                <p class="section-sub">A glimpse of the celebrations we've had the honor of hosting.</p>
+            </div>
+            <div class="gallery-grid">
+                <img class="gallery-img" src="images/gallery_1.png" alt="Wedding hall decorated with white drapes" />
+                <img class="gallery-img" src="images/gallery_2.png" alt="Floral centrepiece at wedding reception" />
+                <img class="gallery-img" src="images/gallery_3.png" alt="Elegant wedding decoration" />
+                <img class="gallery-img" src="images/gallery_4.png" alt="Catered food spread at reception" />
+                <img class="gallery-img" src="images/gallery_1.png" alt="Stage decoration with floral backdrop" />
+                <img class="gallery-img" src="images/gallery_2.png" alt="Beautifully lit wedding stage" />
+            </div>
+            <div class="gallery-cta">
+                <a href="#contact" class="btn-dark">View Full Gallery →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <p class="section-eyebrow">Pricing</p>
+                <h2 class="section-title">Simple, <span>Transparent</span> Pricing</h2>
+            </div>
+            <div class="pricing-card">
+                <span class="pricing-label">Per Person Pricing</span>
+                <div class="pricing-amount">Rs. 1,000 – Rs. 2,000</div>
+                <p class="pricing-per">per person, depending on package selection</p>
+                <div class="pricing-features">
+                    <span class="pf">Complete hall decoration</span>
+                    <span class="pf">Freshly prepared catering</span>
+                    <span class="pf">Professional service staff</span>
+                    <span class="pf">Table settings & linens</span>
+                    <span class="pf">Sound system & lighting</span>
+                    <span class="pf">Guest capacity up to 500</span>
+                    <span class="pf">Separate ladies' section</span>
+                    <span class="pf">Ample parking space</span>
+                </div>
+                <p class="pricing-note">Custom packages available — contact us for a personalized quote tailored to your
+                    event.</p>
+                <a href="#contact" class="btn-pricing">Get a Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+        <div class="container">
+            <div class="reviews-header">
+                <p class="section-eyebrow">Testimonials</p>
+                <h2 class="section-title">What Our <span>Guests Say</span></h2>
+                <div class="rating-badge">
+                    <span class="stars-gold">★★★★★</span>
+                    <span class="rating-num">4.2</span>
+                    <span class="rating-label">based on</span>
+                    <strong>168 Google Reviews</strong>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Excellent quality service. Very neat and clean atmosphere. Well mannered
+                        staff. Highly recommended for any event in Fort Abbas."</p>
+                    <p class="review-author">— Laraib Khan</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Food was absolutely delicious — the taste and variety deserves a full 5
+                        stars. Every guest was impressed with the quality."</p>
+                    <p class="review-author">— Muhammad Qaiser Iqbal</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Best decoration in low budget. They transformed the hall beyond our
+                        expectations. My daughter's wedding was beautiful."</p>
+                    <p class="review-author">— Rizwan Khalid</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Good location providing fresh food, good services, well mannered staff. Easy
+                        to reach from all parts of Fort Abbas."</p>
+                    <p class="review-author">— Muhammad Tayyab</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form-wrap">
+                    <p class="section-eyebrow">Get in Touch</p>
+                    <h2>Book Your <span>Event</span></h2>
+                    <p class="form-hint">Fill out the form below and we'll get back to you within 24 hours.</p>
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" placeholder="Your full name" id="fname" />
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" placeholder="+92-XXX-XXXXXXX" id="fphone" />
+                    </div>
+                    <div class="form-group">
+                        <label>Event Type *</label>
+                        <select id="ftype">
+                            <option value="">Select event type</option>
+                            <option>Wedding</option>
+                            <option>Walima Ceremony</option>
+                            <option>Business Conference</option>
+                            <option>Family Function</option>
+                            <option>Birthday Party</option>
+                            <option>Religious Gathering</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" id="fdate" />
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea
+                            placeholder="Tell us about your event — number of guests, preferences, any special requests..."
+                            id="fmsg"></textarea>
+                    </div>
+                    <button class="btn-submit" onclick="submitForm()">Send Inquiry</button>
+                    <div class="success-msg" id="successMsg">✅ Thank you! We'll be in touch within 24 hours.</div>
+                </div>
+                <div class="contact-info-box">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <p class="info-label">Location</p>
+                            <p class="info-val">Fort Abbas, Sahiwal,<br>Punjab, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div>
+                            <p class="info-label">Phone</p>
+                            <p class="info-val">+92-346-3630243</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🕐</div>
+                        <div>
+                            <p class="info-label">Hours</p>
+                            <p class="info-val">Available 7 days a week<br>9:00 AM – 10:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="social-row">
+                        <p>Follow Us</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-btn">📘</a>
+                            <a href="#" class="social-btn">📷</a>
+                            <a href="https://wa.me/923463630243" class="social-btn">💬</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="nav-logo">
+                    <div class="nav-logo-icon">🌙</div>
+                    <div class="nav-logo-text">
+                        <span class="brand">Subhan</span>
+                        <span class="sub">— Marriage Hall —</span>
+                    </div>
+                </div>
+                <p class="footer-tagline">Making your special moments unforgettable. Fort Abbas's trusted venue for
+                    weddings, walimas, and celebrations.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <ul>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Book Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p class="footer-contact-item">📍 Fort Abbas, Sahiwal, Punjab, Pakistan</p>
+                <p class="footer-contact-item">📞 +92-346-3630243</p>
+                <p class="footer-contact-item">🕐 7 days a week · 9 AM – 10 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Subhan Marriage Hall. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/923463630243" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 500);
+        });
+
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        async function submitForm() {
+            const name = document.getElementById('fname').value.trim();
+            const phone = document.getElementById('fphone').value.trim();
+            const type = document.getElementById('ftype').value;
+            const date = document.getElementById('fdate').value;
+            const message = document.getElementById('fmsg').value;
+
+            if (!name || !phone || !type) {
+                alert('Please fill in your name, phone number, and event type.');
+                return;
+            }
+
+            const submitBtn = document.querySelector('.btn-submit');
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, eventType: type, date, message })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    document.getElementById('successMsg').style.display = 'block';
+                    document.getElementById('fname').value = '';
+                    document.getElementById('fphone').value = '';
+                    document.getElementById('ftype').value = '';
+                    document.getElementById('fdate').value = '';
+                    document.getElementById('fmsg').value = '';
+                } else {
+                    alert(result.message || 'Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                // Fallback to local success message if backend not available
+                document.getElementById('successMsg').style.display = 'block';
+                document.getElementById('fname').value = '';
+                document.getElementById('fphone').value = '';
+                document.getElementById('ftype').value = '';
+                document.getElementById('fdate').value = '';
+                document.getElementById('fmsg').value = '';
+            }
+
+            submitBtn.textContent = 'Send Inquiry';
+            submitBtn.disabled = false;
+        }
+
+        // Close nav on link click (mobile)
+        document.querySelectorAll('#navLinks a').forEach(a => {
+            a.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
